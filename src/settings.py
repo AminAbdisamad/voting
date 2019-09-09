@@ -30,6 +30,7 @@ sentry_sdk.init(
 # Application definition
 
 INSTALLED_APPS = [
+    'vote.apps.VoteConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
