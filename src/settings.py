@@ -19,7 +19,7 @@ SECRET_KEY = 'pblstu43+!1!cp@qy#3k9dds&b&++hg+3zc#qp+bu!hqkx&8y_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
 
 # Connecting to sentry
 sentry_sdk.init(
