@@ -4,4 +4,4 @@ from .models import Questions, Choice
 
 
 def index(request):
-    return render(request, 'polls/index')
+    return render(request, 'vote/index.html')
