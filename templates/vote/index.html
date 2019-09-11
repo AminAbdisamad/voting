@@ -8,9 +8,9 @@
         <li class="collection-item avatar">
           <i class="material-icons circle">question_answer</i>
           <span class="title">{{question.question_text}} </span>
-           <p>{{question.pub_date}} <span class="blue-text right-align">6 votes</span> <a href="#!" class="secondary-content"><i class="material-icons">edit</i></a></p>
+           <p>{{question.pub_date}} <span class="blue-text right-align">6 votes</span> <a href="{% url 'vote:detail' question.id %}" class="secondary-content"><i class="material-icons">forward</i></a></p>
            <br/>
-           <a href="#!" class="right"><i class="material-icons ">more</i></a>
+           <a href="{% url 'vote:results' question.id %}" class="right"><i class="material-icons ">more</i></a>
         </li>
       </ul>
     {% endfor %}

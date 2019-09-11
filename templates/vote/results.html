@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+    <a href="{% url 'vote:index' %}" class="btn" name="back">Back</a>
+    <ul class="collection with-header">
+    <li class="collection-header"><h6 class="strong">{{id.question_text}}</h6></li>
+    {% for choice in id.choice_set.all%}
+    <li class="collection-item"><span class="badge">{{choice.vote}} vote{{choice.vote|pluralize}}</span>{{choice.choice_text}}</li>
+    {% endfor %}
+    </ul>
+     <a href="{% url 'vote:detail' id.id %}" class="btn" name="anothervote">Vote Again</a>
+  </div>
+</div>
+{% endblock %}

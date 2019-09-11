@@ -1,9 +1,9 @@
 
 
 import os
-import sentry_sdk
+# import sentry_sdk
 
-from sentry_sdk.integrations.django import DjangoIntegration
+# from sentry_sdk.integrations.django import DjangoIntegration
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -22,10 +22,10 @@ DEBUG = True
 ALLOWED_HOSTS = ['0.0.0.0']
 
 # Connecting to sentry
-sentry_sdk.init(
-    dsn="https://bb338dd63ccd4350b2c755a778cf4ee1@sentry.io/1563874",
-    integrations=[DjangoIntegration()]
-)
+# sentry_sdk.init(
+#     dsn="https://bb338dd63ccd4350b2c755a778cf4ee1@sentry.io/1563874",
+#     integrations=[DjangoIntegration()]
+# )
 
 # Application definition
 

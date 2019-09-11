@@ -1,0 +1,22 @@
+   {% extends 'base.html' %}
+   {% block content %}
+   <div class="container">
+   <a href="{% url 'vote:index' %}" class="btn" name="back">Back</a>
+    <p class="flow-text">{{ questionId.question_text }}</p>
+    {% if error_message %}
+    <div class="red"><p>{{error_message}}</p></div>
+    {% endif %}
+    <form action="{% url 'vote:vote' questionId.id %}" method="post">
+     {% csrf_token %}
+     {% for choice in questionId.choice_set.all%}
+      <p>
+        <label for="choice{{forloop.counter}}">
+        <input class="with-gap" name="choice" type="radio" id="choice{{ forloop.counter }}" value="{{choice.id}}"/>
+            <span>{{choice.choice_text}}</span>
+        </label>
+      </p>
+       {% endfor %}
+        <button class="btn" name="submit" value="vote">Vote</button>
+    </form>
+    </div>
+  {% endblock %}
