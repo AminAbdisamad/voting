@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Welcome to our Voting App</title>
-  </head>
-  <body>
-    <h2><center>We're working on something special</center></h2>
-  </body>
-</html>
+{% extends 'base.html' %} 
+{% block content %}
+{% if latestQuestionList%}
+<div class="container">
+    <h4 class="center">Vote For it</h4>
+    {% for question in latestQuestionList%}
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <i class="material-icons circle">question_answer</i>
+          <span class="title">{{question.question_text}} </span>
+           <p>{{question.pub_date}} <span class="blue-text right-align">6 votes</span> </p>
+           <a class="btn-floating btn-large waves-effect waves-light red secondary-content"><i class="material-icons tinny">edit</i></a>
+            <a href="#!" class="right"><i class="material-icons">grade</i></a>
+        </li>
+      </ul>
+    {% endfor %}
+  {% else %}
+    <h2>No questions found</h2>
+  </div>
+{% endif %}
+{% endblock %}
