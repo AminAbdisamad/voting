@@ -32,7 +32,7 @@ def vote(request, id):
     try:
         # here we're storing choice selected by the user
         selectedChoice = questionId.choice_set.get(pk=request.POST['choice'])
-    except(KeyError, Choice.DoestNotExist):
+    except(KeyError, Choice.DoesNotExist):
         # if user didn't choice we'll redirect to detail same page and show errors
         return render(request, "vote/detail.html", {"questionId": questionId, "error_message": "you didn't select a choice"})
     else:
